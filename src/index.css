@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+/* Brand palette taken from the OrthoKare letterhead: deep teal + warm orange. */
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+
+  --color-primary-50: #eef7f7;
+  --color-primary-100: #d5ebec;
+  --color-primary-200: #acd6d8;
+  --color-primary-300: #7bbcbf;
+  --color-primary-400: #4b9ca0;
+  --color-primary-500: #2c8085;
+  --color-primary-600: #1f6b70;
+  --color-primary-700: #1a5a5e;
+  --color-primary-800: #164a4d;
+  --color-primary-900: #113a3d;
+  --color-primary-950: #0a2729;
+
+  --color-accent-50: #fff5ec;
+  --color-accent-100: #ffe6d0;
+  --color-accent-200: #fdcaa0;
+  --color-accent-300: #f9a96a;
+  --color-accent-400: #f5913f;
+  --color-accent-500: #f07c22;
+  --color-accent-600: #de6414;
+  --color-accent-700: #b84d12;
+
+  --color-highlight: #f24405;
+
+  --color-ink: #0d3b3f;
+  --color-body: #4a5a5c;
+  --color-cream: #fcf8f4;
+  --color-peach: #fdeee4;
+
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-kenburns: kenburns 9s ease-out forwards;
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes kenburns {
+    from { transform: scale(1.15); }
+    to { transform: scale(1); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+}
+
+@layer base {
+  html {
+    overflow-x: clip;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply overflow-x-clip bg-white font-sans text-body antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply text-ink;
+  }
+  ::selection {
+    @apply bg-accent-500 text-white;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  .prose-body p {
+    @apply mb-4 text-[15px] leading-7 text-body last:mb-0;
+  }
+  .prose-body strong {
+    @apply font-semibold text-ink;
+  }
+  .dot-grid {
+    background-image: radial-gradient(var(--color-primary-300) 1.5px, transparent 1.5px);
+    background-size: 12px 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

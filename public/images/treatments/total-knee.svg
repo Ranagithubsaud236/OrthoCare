@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" font-family="Poppins, Segoe UI, Arial, sans-serif">
+  <title>Total knee replacement: arthritic knee compared with the knee after surgery</title>
+  <defs>
+    <radialGradient id="bone" cx="45%" cy="35%" r="75%">
+      <stop offset="0" stop-color="#fbf1d8"/>
+      <stop offset="0.6" stop-color="#eed9a9"/>
+      <stop offset="1" stop-color="#d9bb7f"/>
+    </radialGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbfcfd"/>
+      <stop offset="0.35" stop-color="#c4cbd3"/>
+      <stop offset="0.55" stop-color="#8e98a3"/>
+      <stop offset="0.8" stop-color="#d7dce1"/>
+      <stop offset="1" stop-color="#a3acb6"/>
+    </linearGradient>
+    <linearGradient id="metalV" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9aa3ad"/>
+      <stop offset="0.5" stop-color="#eef1f4"/>
+      <stop offset="1" stop-color="#8e98a3"/>
+    </linearGradient>
+    <linearGradient id="poly" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#dfe9f2"/>
+    </linearGradient>
+    <radialGradient id="dome" cx="40%" cy="35%" r="70%">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#d4e2ee"/>
+    </radialGradient>
+
+    <!-- Shared bone outlines, drawn around a 200px-wide bone centred at x=200 -->
+    <path id="femur" d="M165 40 L235 40 L235 190 C235 220 300 235 298 280 C296 315 270 335 245 333 C225 332 212 322 200 312 C188 322 175 332 155 333 C130 335 104 315 102 280 C100 235 165 220 165 190 Z"/>
+    <path id="tibiaLower" d="M262 405 C245 415 237 430 237 450 L237 560 L163 560 L163 450 C163 430 155 415 138 405"/>
+    <path id="fibula" d="M286 400 C296 404 304 412 303 424 L298 560 L282 560 L280 430 C278 418 276 408 286 400 Z"/>
+  </defs>
+
+  <rect width="1000" height="700" fill="#ffffff"/>
+  <text x="500" y="44" text-anchor="middle" font-size="34" font-weight="700" fill="#0d3b3f">Total Knee Replacement</text>
+
+  <!-- ========== LEFT: ARTHRITIC KNEE ========== -->
+  <g transform="translate(60 70)">
+    <text x="200" y="0" text-anchor="middle" font-size="24" font-weight="600" fill="#1f6b70">Arthritic Knee</text>
+    <g stroke="#b48a4e" stroke-width="2.5" stroke-linejoin="round">
+      <use href="#fibula" fill="url(#bone)"/>
+      <path fill="url(#bone)" d="M98 352 C98 343 120 340 150 341 L250 341 C280 340 302 343 302 352 C302 372 290 390 262 405 C245 415 237 430 237 450 L237 560 L163 560 L163 450 C163 430 155 415 138 405 C110 390 98 372 98 352 Z"/>
+      <use href="#femur" fill="url(#bone)"/>
+      <!-- bone spurs (osteophytes) -->
+      <ellipse cx="101" cy="300" rx="8" ry="11" fill="url(#bone)"/>
+      <ellipse cx="299" cy="298" rx="8" ry="12" fill="url(#bone)"/>
+      <ellipse cx="97" cy="354" rx="9" ry="7" fill="url(#bone)"/>
+      <ellipse cx="303" cy="353" rx="9" ry="7" fill="url(#bone)"/>
+    </g>
+    <!-- worn, patchy cartilage -->
+    <path d="M108 292 C110 320 130 333 155 332 C176 331 189 321 200 311 C211 321 224 331 245 332 C270 333 290 320 292 292" fill="none" stroke="#5f9fd1" stroke-width="9" stroke-linecap="round" stroke-dasharray="38 12 22 16 46 10 18 14" opacity="0.9"/>
+    <path d="M106 345 L294 345" stroke="#5f9fd1" stroke-width="8" stroke-linecap="round" stroke-dasharray="30 14 42 12 18 18 34" opacity="0.9"/>
+    <!-- areas of bone-on-bone wear -->
+    <g fill="#d9534f" opacity="0.55">
+      <ellipse cx="166" cy="338" rx="14" ry="5"/>
+      <ellipse cx="236" cy="339" rx="12" ry="5"/>
+    </g>
+
+    <g font-size="22" fill="#0d3b3f" font-weight="600">
+      <text x="200" y="140" text-anchor="middle">Femur</text>
+      <text x="200" y="500" text-anchor="middle">Tibia</text>
+      <text x="300" y="545" text-anchor="middle" font-size="16" fill="#5b6b73">Fibula</text>
+    </g>
+    <g stroke="#4a5a5c" stroke-width="1.8" fill="#4a5a5c">
+      <line x1="122" y1="318" x2="30" y2="262"/><circle cx="122" cy="318" r="4"/>
+      <line x1="140" y1="345" x2="30" y2="352"/><circle cx="140" cy="345" r="4"/>
+      <line x1="97" y1="354" x2="30" y2="432"/><circle cx="97" cy="354" r="4"/>
+    </g>
+    <g font-size="20" fill="#0d3b3f" font-weight="500">
+      <text x="-40" y="228">Worn</text><text x="-40" y="252">cartilage</text>
+      <text x="-40" y="318">Bone on</text><text x="-40" y="342">bone</text>
+      <text x="-40" y="458">Bone</text><text x="-40" y="482">spurs</text>
+    </g>
+  </g>
+
+  <!-- arrow between panels -->
+  <g transform="translate(445 360)">
+    <path d="M0 0 H70" stroke="#f07c22" stroke-width="5" stroke-linecap="round"/>
+    <path d="M62 -12 L82 0 L62 12 Z" fill="#f07c22"/>
+  </g>
+
+  <!-- ========== RIGHT: KNEE AFTER SURGERY ========== -->
+  <g transform="translate(450 70)">
+    <text x="200" y="0" text-anchor="middle" font-size="24" font-weight="600" fill="#1f6b70">Knee After Surgery</text>
+    <g stroke="#b48a4e" stroke-width="2.5" stroke-linejoin="round">
+      <use href="#fibula" fill="url(#bone)"/>
+      <!-- tibia with flat, resected top -->
+      <path fill="url(#bone)" d="M100 364 L300 364 C300 382 290 392 262 405 C245 415 237 430 237 450 L237 560 L163 560 L163 450 C163 430 155 415 138 405 C110 392 100 382 100 364 Z"/>
+      <use href="#femur" fill="url(#bone)"/>
+    </g>
+    <!-- tibial stem (inside bone) -->
+    <path d="M176 372 L224 372 L214 452 C212 460 188 460 186 452 Z" fill="url(#metalV)" stroke="#6f7a85" stroke-width="1.5" opacity="0.92"/>
+    <!-- femoral component -->
+    <path d="M103 266 C101 312 128 337 155 335 C176 334 189 323 200 314 C211 323 224 334 245 335 C272 337 299 312 297 266 L279 262 C281 298 266 316 246 316 C230 316 215 306 200 296 C185 306 170 316 154 316 C134 316 119 298 121 262 Z" fill="url(#metal)" stroke="#6f7a85" stroke-width="2"/>
+    <!-- plastic spacer -->
+    <rect x="110" y="338" width="180" height="15" rx="6" fill="url(#poly)" stroke="#8fa3b5" stroke-width="1.5"/>
+    <!-- tibial tray -->
+    <rect x="102" y="353" width="196" height="12" rx="3" fill="url(#metal)" stroke="#6f7a85" stroke-width="1.5"/>
+    <!-- patella (kneecap) with resurfaced back -->
+    <circle cx="200" cy="232" r="42" fill="url(#bone)" stroke="#b48a4e" stroke-width="2.5" opacity="0.96"/>
+    <circle cx="200" cy="232" r="27" fill="url(#dome)" stroke="#8fa3b5" stroke-width="1.5" opacity="0.9"/>
+
+    <g font-size="22" fill="#0d3b3f" font-weight="600">
+      <text x="200" y="130" text-anchor="middle">Femur</text>
+      <text x="200" y="510" text-anchor="middle">Tibia</text>
+    </g>
+    <g stroke="#4a5a5c" stroke-width="1.8" fill="#4a5a5c">
+      <line x1="285" y1="290" x2="345" y2="180"/><circle cx="285" cy="290" r="3"/>
+      <line x1="222" y1="224" x2="345" y2="245"/><circle cx="222" cy="224" r="3"/>
+      <line x1="288" y1="345" x2="345" y2="320"/><circle cx="288" cy="345" r="3"/>
+      <line x1="292" y1="359" x2="345" y2="395"/><circle cx="292" cy="359" r="3"/>
+      <line x1="210" y1="420" x2="345" y2="465"/><circle cx="210" cy="420" r="3"/>
+    </g>
+    <g font-size="20" fill="#0d3b3f" font-weight="500">
+      <text x="350" y="172">Femoral</text><text x="350" y="196">component</text>
+      <text x="350" y="240">Patellar</text><text x="350" y="264">component</text>
+      <text x="350" y="314">Plastic</text><text x="350" y="338">spacer</text>
+      <text x="350" y="390">Tibial</text><text x="350" y="414">component</text>
+      <text x="350" y="462">Tibial</text><text x="350" y="486">stem</text>
+    </g>
+  </g>
+
+  <!-- patella back view -->
+  <g transform="translate(900 618)">
+    <circle r="38" fill="url(#bone)" stroke="#b48a4e" stroke-width="2.5"/>
+    <circle r="27" fill="url(#dome)" stroke="#8fa3b5" stroke-width="1.5"/>
+    <circle cx="-8" cy="-8" r="6" fill="#ffffff" opacity="0.8"/>
+    <text y="58" text-anchor="middle" font-size="18" fill="#5b6b73">Patella (back)</text>
+  </g>
+</svg>
