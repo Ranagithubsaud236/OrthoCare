@@ -3,6 +3,8 @@ import HeroSlider from '../components/home/HeroSlider';
 import AboutPreview from '../components/home/AboutPreview';
 import TreatmentsGrid from '../components/home/TreatmentsGrid';
 import InsuranceMarquee from '../components/home/InsuranceMarquee';
+import GoogleReviews from '../components/home/GoogleReviews';
+import GalleryPreview from '../components/home/GalleryPreview';
 import ContactSection from '../components/home/ContactSection';
 import { Divider } from '../components/common/SectionTitle';
 import { SITE, DOCTOR, LOCATIONS, QUALIFICATIONS } from '../data/site';
@@ -38,6 +40,8 @@ export default function Home() {
       <TreatmentsGrid
         intro="From joint-preserving injections and keyhole surgery to robotic-assisted and complex revision joint replacement – care planned around your goals."
       />
+      <GoogleReviews />
+      <GalleryPreview />
       <InsuranceMarquee />
       <Divider />
       <ContactSection />

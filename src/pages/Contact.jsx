@@ -2,7 +2,7 @@ import Seo from '../components/common/Seo';
 import PageHero from '../components/common/PageHero';
 import Reveal, { Stagger, StaggerItem } from '../components/common/Reveal';
 import SectionTitle, { Hl } from '../components/common/SectionTitle';
-import ContactForm from '../components/common/ContactForm';
+import { BookingCard } from '../components/common/BookButton';
 import LocationMapCard from '../components/common/LocationMapCard';
 import { ContactChannels, LocationsList } from '../components/home/ContactSection';
 import { LOCATIONS } from '../data/site';
@@ -23,7 +23,7 @@ export default function Contact() {
           <SectionTitle>Book an <Hl>Appointment</Hl></SectionTitle>
           <ContactChannels />
           <div className="mx-auto mt-14 grid max-w-6xl items-start gap-8 lg:grid-cols-2">
-            <Reveal from="left"><ContactForm /></Reveal>
+            <Reveal from="left"><BookingCard /></Reveal>
             <Reveal from="right"><LocationsList /></Reveal>
           </div>
         </div>

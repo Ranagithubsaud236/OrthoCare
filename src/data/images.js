@@ -1,50 +1,50 @@
-// Stock imagery (Unsplash). Swap any entry for a local file in /public/images
-// (e.g. '/images/horizon-hospital.jpg') and every page using it updates.
-const unsplash = (id) => `https://images.unsplash.com/photo-${id}`;
+// Real photos from Dr. Malik's practice (see data/gallery.js). Keys keep their original names so every
+// page that uses them picks up the real photo; swap any entry for another file in /public/images.
+const real = (name) => `/images/gallery/photos/${name}.jpg`;
 
 export const IMAGES = {
   // Operating theatre & surgery
-  theatre: unsplash('1516549655169-df83a0774514'),
-  theatreBright: unsplash('1551076805-e1869033e561'),
-  surgeonsOperating: unsplash('1551601651-2a8555f1a136'),
-  surgeonPortrait: unsplash('1550831107-1553da8c8464'),
-  surgeonsCircle: unsplash('1579684385127-1ef15d508118'),
-  surgeonFocus: unsplash('1571772996211-2f02c9727629'),
-  surgeonGloves: unsplash('1609188076864-c35269136b09'),
+  theatre: real('img_7879'),
+  theatreBright: real('img_7888'),
+  surgeonsOperating: real('img_7884'),
+  surgeonPortrait: real('2025_03_01_13_04_img_8040'),
+  surgeonsCircle: real('2025_03_03_15_43_img_8052'),
+  surgeonFocus: real('2025_03_01_13_04_img_8041'),
+  surgeonGloves: real('img_7885'),
 
   // Hospital & clinic
-  reception: unsplash('1519494026892-80bbd2d6fd0d'),
-  ward: unsplash('1538108149393-fbbd81895907'),
-  hospitalBuilding: unsplash('1586773860418-d37222d8fce3'),
+  reception: real('img_7889'),
+  ward: real('img_7881'),
+  hospitalBuilding: real('img_7874'),
 
   // Imaging & consultation
-  xrayHand: unsplash('1530497610245-94d3c16cda28'),
-  xrayReview: unsplash('1588776814546-1ffcf47267a5'),
-  xrayReview2: unsplash('1581595219315-a187dd40c322'),
-  consultElderly: unsplash('1576765608535-5f04d1e3f289'),
-  consultSmile: unsplash('1631217868264-e5b90bb7e133'),
-  consultBed: unsplash('1581056771107-24ca5f033842'),
-  consultScreen: unsplash('1666214280557-f1b5022eb634'),
-  consultScreen2: unsplash('1666214277657-e60f05c40b04'),
-  bloodPressure: unsplash('1631815589968-fdb09a223b1e'),
-  laptopDoctor: unsplash('1576091160550-2173dba999ef'),
-  stethoscope: unsplash('1584982751601-97dcc096659c'),
+  xrayHand: real('img_6503'),
+  xrayReview: real('img_5280'),
+  xrayReview2: real('img_6501'),
+  consultElderly: real('2025_03_01_13_05_img_8043'),
+  consultSmile: real('img_7886'),
+  consultBed: real('img_7880'),
+  consultScreen: real('2025_03_01_13_05_img_8042'),
+  consultScreen2: real('2025_03_01_13_03_img_8039'),
+  bloodPressure: real('img_7875'),
+  laptopDoctor: real('img_5504'),
+  stethoscope: real('img_6505'),
 
   // Rehab, injections & non-surgical care
-  kneePhysio: unsplash('1649751361457-01d3a696c7e6'),
-  wristBrace: unsplash('1597764690523-15bea4c581c9'),
-  injection: unsplash('1611694449252-02453c27856a'),
-  vials: unsplash('1576671081837-49000212a370'),
-  pills: unsplash('1607619056574-7b8d3ee536b2'),
-  handsCare: unsplash('1584515933487-779824d29309'),
+  kneePhysio: real('img_7876'),
+  wristBrace: real('img_7877'),
+  injection: real('img_7878'),
+  vials: real('img_6270'),
+  pills: real('img_6271'),
+  handsCare: real('img_7873'),
 
   // Active life after treatment
-  stairs: unsplash('1476480862126-209bfaa8edc8'),
-  exercise: unsplash('1571019613454-1cb2f99b2d8b'),
-  yoga: unsplash('1544367567-0f2fcb009e0b'),
-  walkField: unsplash('1543333995-a78aea2eee50'),
-  groupExercise: unsplash('1518611012118-696072aa579a'),
-  gym: unsplash('1558611848-73f7eb4001a1'),
+  stairs: real('img_5504'),
+  exercise: real('img_5505'),
+  yoga: real('img_6261'),
+  walkField: '/images/gallery/videos/img_5487.jpg', // patient walking after surgery (video still)
+  groupExercise: real('20180817_113012'),
+  gym: real('20180817_113018'),
 
   // Treatment illustrations (implants, diagrams, X-rays) – local files in /public/images/treatments
   cardTotalHip: '/images/treatments/card-total-hip.jpg',
@@ -72,10 +72,9 @@ export const IMAGES = {
 export function img(keyOrUrl, width = 1200) {
   const src = IMAGES[keyOrUrl] ?? keyOrUrl;
   if (!src) return '';
-  return src.startsWith('https://images.unsplash.com')
-    ? `${src}?auto=format&fit=crop&w=${width}&q=75`
-    : src;
+  // Small slots (cards, tiles) get the 640px thumbnail instead of the full photo.
+  return width <= 800 && src.startsWith('/images/gallery/photos/') ? src.replace('/photos/', '/thumbs/') : src;
 }
 
-// Real photograph of the doctor. Drop the file at this path; until then a branded placeholder is shown.
+// Real photograph of the doctor (home page and About profile).
 export const DOCTOR_PHOTO = '/images/dr-khalid-rehman-malik.jpg';

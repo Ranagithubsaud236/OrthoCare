@@ -112,9 +112,8 @@ export default function HeroSlider() {
                 </p>,
                 <h1 key="t" className="text-3xl font-bold leading-tight text-white sm:text-5xl">{slide.title}</h1>,
                 <p key="p" className="mt-5 max-w-xl text-base leading-7 text-white/85 sm:text-lg">{slide.text}</p>,
-                <div key="c" className="mt-8 flex flex-wrap gap-3">
+                <div key="c" className="mt-8">
                   <Button to={slide.cta.to} size="lg">{slide.cta.label}</Button>
-                  <Button to="/contact" variant="white" size="lg">Book Appointment</Button>
                 </div>,
               ].map((node) => (
                 <motion.div

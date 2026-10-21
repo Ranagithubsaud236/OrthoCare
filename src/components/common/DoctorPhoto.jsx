@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { DOCTOR_PHOTO } from '../../data/images';
 import { DOCTOR } from '../../data/site';
 
-/** Portrait of the doctor; shows a branded placeholder until /public/images/dr-khalid-rehman-malik.jpg exists. */
+/** Portrait of the doctor (landscape source photo, framed on his face); falls back to a branded placeholder. */
 export default function DoctorPhoto({ className = '' }) {
   const [failed, setFailed] = useState(false);
 
@@ -28,7 +28,8 @@ export default function DoctorPhoto({ className = '' }) {
       src={DOCTOR_PHOTO}
       alt={`${DOCTOR.name}, ${DOCTOR.title}`}
       onError={() => setFailed(true)}
-      className={`object-cover object-top ${className}`}
+      style={{ objectPosition: '36% center' }}
+      className={`object-cover ${className}`}
     />
   );
 }

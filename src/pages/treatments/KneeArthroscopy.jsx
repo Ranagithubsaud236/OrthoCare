@@ -164,18 +164,18 @@ export default function KneeArthroscopy() {
         <div className="container-x">
           <SectionTitle>Common Indications for <Hl>Arthroscopic Procedures</Hl></SectionTitle>
           <Reveal className="mx-auto mt-10 max-w-3xl overflow-hidden rounded-xl border border-accent-300 bg-white shadow-sm">
-            <table className="w-full text-left text-[15px]">
+            <table className="w-full text-left text-sm sm:text-[15px]">
               <thead className="bg-accent-50">
                 <tr>
-                  <th scope="col" className="px-5 py-4 font-semibold text-ink">Condition</th>
-                  <th scope="col" className="px-5 py-4 font-semibold text-ink">Arthroscopic Treatment</th>
+                  <th scope="col" className="px-3 py-3 font-semibold text-ink sm:px-5 sm:py-4">Condition</th>
+                  <th scope="col" className="px-3 py-3 font-semibold text-ink sm:px-5 sm:py-4">Arthroscopic Treatment</th>
                 </tr>
               </thead>
               <tbody>
                 {INDICATIONS.map(([condition, treatment]) => (
                   <tr key={condition} className="border-t border-accent-100">
-                    <td className="px-5 py-4 font-medium text-ink">{condition}</td>
-                    <td className="px-5 py-4 text-body">{treatment}</td>
+                    <td className="px-3 py-3 sm:px-5 sm:py-4 font-medium text-ink">{condition}</td>
+                    <td className="px-3 py-3 sm:px-5 sm:py-4 text-body">{treatment}</td>
                   </tr>
                 ))}
               </tbody>

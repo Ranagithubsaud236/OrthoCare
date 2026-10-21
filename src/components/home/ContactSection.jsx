@@ -1,14 +1,14 @@
 import SectionTitle, { Hl } from '../common/SectionTitle';
 import Reveal, { Stagger, StaggerItem } from '../common/Reveal';
-import ContactForm from '../common/ContactForm';
+import { BookingCard } from '../common/BookButton';
 import LocationMapCard from '../common/LocationMapCard';
 import { PhoneIcon, WhatsAppIcon, ClockIcon } from '../common/Icons';
 import { SITE, LOCATIONS, whatsappLink } from '../../data/site';
 
 export function ContactChannels() {
   const channels = [
-    { icon: PhoneIcon, label: 'Phone', value: SITE.phone, href: SITE.phoneHref },
-    { icon: WhatsAppIcon, label: 'WhatsApp', value: SITE.phone, href: whatsappLink(), external: true },
+    { icon: PhoneIcon, label: 'Call Assistant', value: SITE.phone, href: SITE.phoneHref },
+    { icon: WhatsAppIcon, label: 'Book on WhatsApp', value: SITE.phone, href: whatsappLink(), external: true },
   ];
   return (
     <Stagger className="mx-auto mt-10 flex max-w-xl flex-wrap justify-center gap-6">
@@ -60,7 +60,7 @@ export default function ContactSection() {
         <ContactChannels />
 
         <div className="mx-auto mt-14 grid max-w-6xl items-start gap-8 lg:grid-cols-2">
-          <Reveal from="left"><ContactForm /></Reveal>
+          <Reveal from="left"><BookingCard /></Reveal>
           <Reveal from="right"><LocationsList /></Reveal>
         </div>
       </div>

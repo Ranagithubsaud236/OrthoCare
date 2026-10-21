@@ -10,6 +10,7 @@ const SITE_MAP = [
   { label: 'Treatments', to: '/treatments' },
   { label: 'Practice Locations', to: '/practice-locations' },
   { label: 'Insurance Information', to: '/insurance' },
+  { label: 'Gallery', to: '/gallery' },
   { label: 'Blog', to: '/blog' },
   { label: 'Contact Us', to: '/contact' },
 ];

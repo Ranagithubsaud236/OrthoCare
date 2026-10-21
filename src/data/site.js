@@ -5,6 +5,7 @@ export const SITE = {
     'OrthoCare | Dr. Khalid Rehman Malik – Hip & Knee Replacement Surgeon in Lahore & Layyah',
   description:
     'Dr. Khalid Rehman Malik, Associate Professor and Consultant Orthopaedic Surgeon specialising in hip and knee replacement, robotic joint surgery and keyhole (arthroscopic) sports surgery. Clinics in Lahore, Shahdara and Layyah.',
+  // Assistant's number – used for calls and WhatsApp appointment booking.
   phone: '0300-9404247',
   phoneHref: 'tel:+923009404247',
   whatsapp: '923009404247',
@@ -98,14 +99,23 @@ export const NAV = [
   { label: 'Home', to: '/' },
   { label: 'About', to: '/about' },
   { label: 'Treatments', to: '/treatments', children: 'treatments' },
+  { label: 'Gallery', to: '/gallery' },
+  { label: 'Insurance', to: '/insurance' },
   {
     label: 'Patient Info',
     to: '/practice-locations',
     children: [
       { label: 'Practice Locations', to: '/practice-locations' },
-      { label: 'Insurance Information', to: '/insurance' },
-      { label: 'Book an Appointment', to: '/contact' },
+      { label: 'Contact Us', to: '/contact' },
     ],
   },
   { label: 'Blog', to: '/blog' },
 ];
+
+// Google Business Profile – the live rating and reviews come from /api/google-reviews.
+export const GOOGLE_PROFILE = {
+  name: 'Ortho Care by Professor Dr. Khalid Rehman Malik',
+  query: 'Ortho Care by Professor Dr. Khalid Rehman Malik, Orthopedic surgeon, Lahore',
+};
+export const googleProfileUrl = () =>
+  `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(GOOGLE_PROFILE.query)}`;

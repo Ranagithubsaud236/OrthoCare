@@ -8,7 +8,8 @@ import { img } from '../../data/images';
 export default function Seo({ title, description = SITE.description, path = '/', image = 'theatre', type = 'website', jsonLd, noindex = false }) {
   const url = `${SITE.url}${path === '/' ? '' : path}`;
   const fullTitle = title ? `${title} | ${SITE.brand} – Dr. Khalid Rehman Malik` : SITE.defaultTitle;
-  const ogImage = img(image, 1200);
+  const src = img(image, 1200);
+  const ogImage = src.startsWith('/') ? `${SITE.url}${src}` : src;
 
   return (
     <>

@@ -12,6 +12,7 @@ const pages = [
   ...TREATMENTS.map((t) => ({ path: `/treatments/${t.slug}`, priority: '0.8' })),
   { path: '/practice-locations', priority: '0.8' },
   { path: '/insurance', priority: '0.6' },
+  { path: '/gallery', priority: '0.6' },
   { path: '/contact', priority: '0.8' },
   { path: '/blog', priority: '0.6' },
   ...POSTS.map((p) => ({ path: `/blog/${p.slug}`, priority: '0.5', lastmod: p.date })),

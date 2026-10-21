@@ -1,7 +1,8 @@
 import Reveal from './Reveal';
 import Button from './Button';
-import { PhoneIcon, WhatsAppIcon } from './Icons';
-import { SITE, whatsappLink } from '../../data/site';
+import BookButton from './BookButton';
+import { PhoneIcon } from './Icons';
+import { SITE } from '../../data/site';
 
 /** Teal call-to-action band used at the end of content pages. */
 export default function BookingBand({ heading = 'Ready to take the first step?', text }) {
@@ -21,9 +22,7 @@ export default function BookingBand({ heading = 'Ready to take the first step?',
           <Button href={SITE.phoneHref} arrow={false} size="lg">
             <PhoneIcon className="h-4 w-4" /> {SITE.phone}
           </Button>
-          <Button href={whatsappLink()} target="_blank" rel="noopener noreferrer" variant="white" arrow={false} size="lg">
-            <WhatsAppIcon className="h-5 w-5 text-[#25D366]" /> WhatsApp
-          </Button>
+          <BookButton variant="white" size="lg" />
         </Reveal>
       </div>
     </section>

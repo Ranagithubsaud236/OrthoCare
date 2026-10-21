@@ -4,8 +4,9 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import Logo from '../common/Logo';
 import Button from '../common/Button';
-import { ChevronDown, MenuIcon, CloseIcon, PhoneIcon } from '../common/Icons';
-import { NAV, SITE } from '../../data/site';
+import BookButton from '../common/BookButton';
+import { ChevronDown, MenuIcon, CloseIcon, PhoneIcon, WhatsAppIcon } from '../common/Icons';
+import { NAV, SITE, whatsappLink } from '../../data/site';
 import { TREATMENTS } from '../../data/treatments';
 
 const TREATMENT_LINKS = TREATMENTS.map((t) => ({ label: t.title, to: `/treatments/${t.slug}` }));
@@ -32,7 +33,7 @@ function DesktopDropdown({ item, active }) {
         aria-haspopup="true"
         aria-expanded={open}
         onFocus={() => setOpen(true)}
-        className={`relative flex items-center gap-1 px-3 py-7 text-sm font-medium tracking-wide transition-colors hover:text-accent-500 ${active ? 'text-accent-500' : 'text-ink'}`}
+        className={`relative flex items-center gap-1 px-2 py-7 text-sm xl:px-3 font-medium tracking-wide transition-colors hover:text-accent-500 ${active ? 'text-accent-500' : 'text-ink'}`}
       >
         {item.label}
         <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-300 ${open ? 'rotate-180' : ''}`} />
@@ -135,7 +136,7 @@ function MobileMenu({ onClose, isActive }) {
           })}
         </ul>
         <div className="space-y-3 border-t border-ink/10 p-5">
-          <Button to="/contact" className="w-full" onClick={onClose}>Contact Us</Button>
+          <BookButton className="w-full" showNumber onClick={onClose} />
           <Button href={SITE.phoneHref} variant="outline" arrow={false} className="w-full">
             <PhoneIcon className="h-4 w-4" /> {SITE.phone}
           </Button>
@@ -168,6 +169,19 @@ export default function Header() {
 
   return (
     <header className={`sticky top-0 z-40 bg-white/95 backdrop-blur transition-shadow duration-300 ${scrolled ? 'shadow-lg shadow-primary-900/5' : ''}`}>
+      <a
+        href={whatsappLink()}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block bg-primary-700 text-white transition-colors hover:bg-primary-800"
+      >
+        <span className="container-x flex h-9 items-center justify-center gap-2 text-xs font-medium sm:justify-end sm:text-[13px]">
+          <WhatsAppIcon className="h-4 w-4 flex-none text-[#25D366]" />
+          <span className="font-semibold uppercase tracking-wider text-accent-300">Book Appointment</span>
+          <span aria-hidden="true" className="text-white/40">|</span>
+          <span className="whitespace-nowrap">Assistant: <strong className="font-semibold">{SITE.phone}</strong></span>
+        </span>
+      </a>
       <div className="container-x flex h-20 items-center justify-between gap-2">
         <Logo />
 
@@ -182,7 +196,7 @@ export default function Header() {
                     to={item.to}
                     end={item.to === '/'}
                     className={({ isActive: a }) =>
-                      `relative block px-3 py-7 text-sm font-medium tracking-wide transition-colors hover:text-accent-500 ${a ? 'text-accent-500' : 'text-ink'}`
+                      `relative block px-2 py-7 text-sm xl:px-3 font-medium tracking-wide transition-colors hover:text-accent-500 ${a ? 'text-accent-500' : 'text-ink'}`
                     }
                   >
                     {({ isActive: a }) => (
@@ -199,7 +213,7 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <span className="hidden sm:block"><Button to="/contact">Contact Us</Button></span>
+          <span className="hidden sm:block lg:hidden xl:block"><BookButton /></span>
           <button
             type="button"
             onClick={() => setMobileOpen(true)}

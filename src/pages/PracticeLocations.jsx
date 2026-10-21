@@ -4,6 +4,7 @@ import Reveal from '../components/common/Reveal';
 import SectionTitle, { Hl } from '../components/common/SectionTitle';
 import SmartImage from '../components/common/SmartImage';
 import Button from '../components/common/Button';
+import BookButton from '../components/common/BookButton';
 import BookingBand from '../components/common/BookingBand';
 import { ClockIcon, MapPinIcon } from '../components/common/Icons';
 import { SITE, DOCTOR, LOCATIONS, mapEmbedUrl, mapDirectionsUrl } from '../data/site';
@@ -37,7 +38,7 @@ export default function PracticeLocations() {
           <div className="mx-auto mt-12 max-w-5xl space-y-10">
             {LOCATIONS.map((loc, i) => (
               <Reveal key={loc.id} from={i % 2 ? 'right' : 'left'} className="rounded-xl border border-accent-300 bg-white p-5 shadow-sm sm:p-6">
-                <article id={loc.id} className="scroll-mt-28">
+                <article id={loc.id} className="scroll-mt-32">
                   <header className="flex flex-col items-center gap-1 text-center">
                     <h2 className="text-xl font-semibold text-accent-600">{loc.name}</h2>
                     <p className="flex items-center gap-1.5 text-sm text-ink"><MapPinIcon className="h-4 w-4 text-primary-500" /> {loc.city}, {loc.region}</p>
@@ -65,7 +66,7 @@ export default function PracticeLocations() {
                   </div>
                   <div className="mt-5 flex flex-wrap justify-center gap-3">
                     <Button href={mapDirectionsUrl(loc.mapQuery)} target="_blank" rel="noopener noreferrer" variant="outline" size="sm">Get Directions</Button>
-                    <Button to="/contact" size="sm">Book at {loc.name}</Button>
+                    <BookButton size="sm" label={`Book at ${loc.name}`} text={`Assalam o Alaikum, I would like to book an appointment with Dr. Khalid Rehman Malik at ${loc.name}, ${loc.city}.`} />
                   </div>
                 </article>
               </Reveal>
