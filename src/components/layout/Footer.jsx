@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom';
 import Logo from '../common/Logo';
+import SocialLinks from '../common/SocialLinks';
 import { PhoneIcon, WhatsAppIcon, MapPinIcon } from '../common/Icons';
 import { SITE, DOCTOR, LOCATIONS, whatsappLink } from '../../data/site';
-import { TREATMENTS } from '../../data/treatments';
+import { DIAGNOSES } from '../../data/diagnoses';
 
 const SITE_MAP = [
   { label: 'Home', to: '/' },
   { label: 'About Dr. Malik', to: '/about' },
-  { label: 'Treatments', to: '/treatments' },
+  { label: 'Diagnosis', to: '/diagnosis' },
   { label: 'Practice Locations', to: '/practice-locations' },
   { label: 'Insurance Information', to: '/insurance' },
   { label: 'Gallery', to: '/gallery' },
@@ -36,6 +37,9 @@ export default function Footer() {
             {DOCTOR.name} – {DOCTOR.role}. {DOCTOR.postNominals}. Specialist in hip &amp; knee replacement and
             arthroscopic sports surgery with over {DOCTOR.experienceYears} years of experience in Pakistan and abroad.
           </p>
+          <div className="mt-5">
+            <SocialLinks size="md" />
+          </div>
         </div>
 
         <nav aria-label="Site map">
@@ -47,11 +51,11 @@ export default function Footer() {
           </ul>
         </nav>
 
-        <nav aria-label="Treatments">
-          <FooterHeading>Treatments</FooterHeading>
+        <nav aria-label="Diagnosis">
+          <FooterHeading>Diagnosis</FooterHeading>
           <ul className="mt-4 space-y-2">
-            {TREATMENTS.map((t) => (
-              <li key={t.slug}><Link to={`/treatments/${t.slug}`} className={linkCls}>{t.title}</Link></li>
+            {DIAGNOSES.map((d) => (
+              <li key={d.id}><Link to={`/diagnosis/${d.id}`} className={linkCls}>{d.title}</Link></li>
             ))}
           </ul>
         </nav>

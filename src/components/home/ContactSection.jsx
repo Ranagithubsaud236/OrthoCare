@@ -41,8 +41,8 @@ export function LocationsList() {
             <p className="font-semibold text-ink">{loc.name}</p>
             <p className="text-sm">{loc.city}</p>
             {loc.schedule.map((s) => (
-              <p key={s.days} className="mt-1 flex items-center justify-center gap-1.5 text-sm">
-                <ClockIcon className="h-3.5 w-3.5 text-accent-500" /> {s.days}, {s.time}
+              <p key={s.days} className="mt-1 text-sm">
+                <ClockIcon className="mr-1.5 inline h-3.5 w-3.5 -translate-y-px text-accent-500" />{s.days}, {s.time}
               </p>
             ))}
           </li>

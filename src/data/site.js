@@ -1,6 +1,6 @@
 export const SITE = {
   brand: 'OrthoCare',
-  url: 'https://www.orthocare.pk', // update once the domain is registered
+  url: 'https://drkhalidrehman.com',
   defaultTitle:
     'OrthoCare | Dr. Khalid Rehman Malik – Hip & Knee Replacement Surgeon in Lahore & Layyah',
   description:
@@ -11,6 +11,16 @@ export const SITE = {
   whatsapp: '923009404247',
   locale: 'en_PK',
 };
+
+// Doctor's official social media accounts.
+export const SOCIAL = [
+  {
+    id: 'facebook',
+    label: 'Facebook',
+    href: 'https://www.facebook.com/p/%F0%9D%90%83%F0%9D%90%AB-%F0%9D%90%8A%F0%9D%90%A1%F0%9D%90%9A%F0%9D%90%A5%F0%9D%90%A2%F0%9D%90%9D-%F0%9D%90%91%F0%9D%90%9E%F0%9D%90%A1%F0%9D%90%A6%F0%9D%90%9A%F0%9D%90%A7-%F0%9D%90%8C%F0%9D%90%9A%F0%9D%90%A5%F0%9D%90%A2%F0%9D%90%A4-61581476383142/',
+  },
+  { id: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/dr.khalid_rehman_official/' },
+];
 
 export const whatsappLink = (text = 'Assalam o Alaikum, I would like to book an appointment with Dr. Khalid Rehman Malik.') =>
   `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(text)}`;
@@ -40,13 +50,15 @@ export const QUALIFICATIONS = [
 ];
 
 export const SPECIALISMS = [
-  'Total hip replacement',
-  'Total knee replacement',
-  'Partial (unicompartmental) knee replacement',
-  'Robotic-assisted hip and knee replacement',
-  'Complex revision hip and knee surgery',
-  'Arthroscopic (keyhole) knee and sports surgery',
-  'Non-surgical joint care and injections',
+  'Total knee replacement – robotic and conventional',
+  'Half knee replacement (UKA)',
+  'Total hip replacement – cemented and non-cemented',
+  'Hemiarthroplasty',
+  'Arthroscopic (keyhole) surgery',
+  'Joint injections – steroid, gel and Arthrosamid®',
+  'Fracture management',
+  'Paediatric orthopaedics – DDH and club foot',
+  'Tumour surgery',
 ];
 
 export const LOCATIONS = [
@@ -97,18 +109,18 @@ export const INSURERS = [
 
 export const NAV = [
   { label: 'Home', to: '/' },
-  { label: 'About', to: '/about' },
-  { label: 'Treatments', to: '/treatments', children: 'treatments' },
-  { label: 'Gallery', to: '/gallery' },
-  { label: 'Insurance', to: '/insurance' },
   {
-    label: 'Patient Info',
-    to: '/practice-locations',
+    label: 'About',
+    to: '/about',
     children: [
+      { label: 'About Dr. Malik', to: '/about' },
       { label: 'Practice Locations', to: '/practice-locations' },
       { label: 'Contact Us', to: '/contact' },
     ],
   },
+  { label: 'Diagnosis', to: '/diagnosis', children: 'diagnosis' },
+  { label: 'Gallery', to: '/gallery' },
+  { label: 'Insurance', to: '/insurance' },
   { label: 'Blog', to: '/blog' },
 ];
 

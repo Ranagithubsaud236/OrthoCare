@@ -3,9 +3,9 @@ import Reveal from '../common/Reveal';
 import { ShieldIcon } from '../common/Icons';
 import { INSURERS } from '../../data/site';
 
-export function InsurerTile({ insurer }) {
+export function InsurerTile({ insurer, className = 'w-44' }) {
   return (
-    <div className="flex h-20 w-44 flex-none items-center justify-center gap-2 rounded-xl border border-ink/10 bg-white px-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent-300 hover:shadow-lg">
+    <div className={`flex h-20 flex-none items-center justify-center gap-2 rounded-xl border border-ink/10 bg-white px-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent-300 hover:shadow-lg ${className}`}>
       {insurer.logo ? (
         <img src={insurer.logo} alt={insurer.full} className="max-h-12 w-auto object-contain" loading="lazy" />
       ) : (

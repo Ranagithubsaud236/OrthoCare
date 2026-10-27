@@ -32,7 +32,7 @@ export default function TreatmentLayout({ slug, description, heroImage, faqs, ch
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
-        { '@type': 'ListItem', position: 2, name: 'Treatments', item: `${SITE.url}/treatments` },
+        { '@type': 'ListItem', position: 2, name: 'Diagnosis', item: `${SITE.url}/diagnosis` },
         { '@type': 'ListItem', position: 3, name: treatment.title, item: url },
       ],
     },
@@ -54,7 +54,7 @@ export default function TreatmentLayout({ slug, description, heroImage, faqs, ch
       <PageHero
         title={treatment.title}
         image={heroImage}
-        breadcrumb={[{ label: 'Treatments', to: '/treatments' }, { label: treatment.title }]}
+        breadcrumb={[{ label: 'Diagnosis', to: '/diagnosis' }, { label: treatment.title }]}
       />
 
       <article>{children}</article>

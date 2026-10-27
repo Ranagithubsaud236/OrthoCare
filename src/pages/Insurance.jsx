@@ -38,9 +38,9 @@ export default function Insurance() {
               personal policy, our team can help you with the paperwork for consultations, investigations and surgery.
             </p>
           </Reveal>
-          <Stagger className="mx-auto mt-10 flex max-w-4xl flex-wrap justify-center gap-5">
+          <Stagger className="mx-auto mt-10 flex max-w-4xl flex-wrap justify-center gap-3 sm:gap-5">
             {INSURERS.map((i) => (
-              <StaggerItem key={i.name}><InsurerTile insurer={i} /></StaggerItem>
+              <StaggerItem key={i.name} className="w-[calc(50%-6px)] sm:w-44"><InsurerTile insurer={i} className="w-full" /></StaggerItem>
             ))}
           </Stagger>
         </div>

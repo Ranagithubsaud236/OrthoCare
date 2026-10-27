@@ -100,7 +100,7 @@ export default function Gallery() {
             </p>
           </Reveal>
 
-          <div role="tablist" aria-label="Gallery filter" className="-mx-4 mt-8 flex gap-2 overflow-x-auto px-4 pb-2 sm:mx-0 sm:flex-wrap sm:justify-center sm:px-0">
+          <div role="tablist" aria-label="Gallery filter" className="mt-8 flex flex-wrap justify-center gap-2">
             {TABS.map((t) => (
               <button
                 key={t.id}
@@ -108,7 +108,7 @@ export default function Gallery() {
                 role="tab"
                 aria-selected={tab === t.id}
                 onClick={() => setTab(t.id)}
-                className={`flex-none rounded-full px-5 py-2 text-sm font-semibold transition ${
+                className={`flex-none rounded-full px-4 py-2 text-[13px] font-semibold transition sm:px-5 sm:text-sm ${
                   tab === t.id ? 'bg-accent-500 text-white shadow-md shadow-accent-500/25' : 'bg-primary-50 text-primary-700 hover:bg-primary-100'
                 }`}
               >
@@ -120,9 +120,9 @@ export default function Gallery() {
           {showVideos && (
             <>
               {tab === 'all' && <h3 className="mt-10 text-lg font-semibold">Videos</h3>}
-              <div className="mt-5 gap-5 sm:columns-2 lg:columns-3">
+              <div className="mt-5 columns-2 gap-3 sm:gap-5 lg:columns-3">
                 {GALLERY_VIDEOS.map((v) => (
-                  <div key={v.src} className="mb-5 break-inside-avoid"><VideoTile video={v} /></div>
+                  <div key={v.src} className="mb-3 break-inside-avoid sm:mb-5"><VideoTile video={v} /></div>
                 ))}
               </div>
             </>

@@ -4,7 +4,7 @@ import Reveal, { Stagger, StaggerItem } from '../components/common/Reveal';
 import SectionTitle, { Hl, Divider } from '../components/common/SectionTitle';
 import DoctorPhoto from '../components/common/DoctorPhoto';
 import SmartImage from '../components/common/SmartImage';
-import BookingBand from '../components/common/BookingBand';
+import ContactSection from '../components/home/ContactSection';
 import TreatmentsGrid from '../components/home/TreatmentsGrid';
 import { FullBleedSplit, MediaSplit, InfoCards } from '../components/treatment/Blocks';
 import { AwardIcon } from '../components/common/Icons';
@@ -165,7 +165,7 @@ export default function About() {
         </ul>
       </MediaSplit>
 
-      <BookingBand />
+      <ContactSection />
     </>
   );
 }

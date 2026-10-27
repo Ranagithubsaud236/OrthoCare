@@ -6,7 +6,7 @@ import Button from '../common/Button';
 import DoctorPhoto from '../common/DoctorPhoto';
 import { CheckIcon } from '../common/Icons';
 import { DOCTOR, SPECIALISMS, LOCATIONS, INSURERS } from '../../data/site';
-import { TREATMENTS } from '../../data/treatments';
+import { DIAGNOSES } from '../../data/diagnoses';
 
 function Counter({ to, suffix = '' }) {
   const ref = useRef(null);
@@ -25,7 +25,7 @@ function Counter({ to, suffix = '' }) {
 const STATS = [
   { value: DOCTOR.experienceYears, suffix: '+', label: 'Years of experience' },
   { value: LOCATIONS.length, suffix: '', label: 'Clinic locations' },
-  { value: TREATMENTS.length, suffix: '', label: 'Specialist treatments' },
+  { value: DIAGNOSES.length, suffix: '', label: 'Areas of expertise' },
   { value: INSURERS.length, suffix: '', label: 'Insurance panels' },
 ];
 

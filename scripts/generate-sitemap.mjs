@@ -2,13 +2,15 @@
 import { writeFileSync } from 'node:fs';
 import { SITE } from '../src/data/site.js';
 import { TREATMENTS } from '../src/data/treatments.js';
+import { DIAGNOSES } from '../src/data/diagnoses.js';
 import { POSTS } from '../src/data/blog.js';
 
 const today = new Date().toISOString().slice(0, 10);
 const pages = [
   { path: '/', priority: '1.0' },
   { path: '/about', priority: '0.9' },
-  { path: '/treatments', priority: '0.9' },
+  { path: '/diagnosis', priority: '0.9' },
+  ...DIAGNOSES.map((d) => ({ path: `/diagnosis/${d.id}`, priority: '0.8' })),
   ...TREATMENTS.map((t) => ({ path: `/treatments/${t.slug}`, priority: '0.8' })),
   { path: '/practice-locations', priority: '0.8' },
   { path: '/insurance', priority: '0.6' },

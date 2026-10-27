@@ -49,23 +49,16 @@ export const IMAGES = {
   // Treatment illustrations (implants, diagrams, X-rays) – local files in /public/images/treatments
   cardTotalHip: '/images/treatments/card-total-hip.jpg',
   cardTotalKnee: '/images/treatments/card-total-knee.jpg',
-  cardRobotic: '/images/treatments/card-robotic.jpg',
   cardPartialKnee: '/images/treatments/card-partial-knee.jpg',
   cardArthroscopy: '/images/treatments/card-arthroscopy.jpg',
-  cardRevisionHip: '/images/treatments/card-revision-hip.jpg',
-  cardRevisionKnee: '/images/treatments/card-revision-knee.jpg',
   cardNonSurgical: '/images/treatments/card-non-surgical.jpg',
   totalHipImplant: '/images/treatments/total-hip.jpg',
   totalKneeDiagram: '/images/treatments/total-knee.svg',
   partialKneeDiagram: '/images/treatments/partial-knee.jpg',
   arthrosamidPack: '/images/treatments/arthrosamid.jpg',
   hipArthritisDiagram: '/images/treatments/hip-arthritis.svg',
-  robotSystem: '/images/treatments/robot-system.jpg',
   roboticKneeImplant: '/images/treatments/robotic-knee.jpg',
-  roboticArm: '/images/treatments/robotic-partial-knee.jpg',
   arthroscopySurgery: '/images/treatments/knee-arthroscopy.jpg',
-  revisionHipXray: '/images/treatments/revision-hip.jpg',
-  revisionKneeImplant: '/images/treatments/revision-knee.jpg',
 };
 
 /** Resolve an image key (or a direct URL/path) to a sized src. */

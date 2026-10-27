@@ -5,12 +5,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Logo from '../common/Logo';
 import Button from '../common/Button';
 import BookButton from '../common/BookButton';
+import SocialLinks from '../common/SocialLinks';
 import { ChevronDown, MenuIcon, CloseIcon, PhoneIcon, WhatsAppIcon } from '../common/Icons';
 import { NAV, SITE, whatsappLink } from '../../data/site';
-import { TREATMENTS } from '../../data/treatments';
+import { DIAGNOSES } from '../../data/diagnoses';
 
-const TREATMENT_LINKS = TREATMENTS.map((t) => ({ label: t.title, to: `/treatments/${t.slug}` }));
-const childrenOf = (item) => (item.children === 'treatments' ? TREATMENT_LINKS : item.children);
+const DIAGNOSIS_LINKS = DIAGNOSES.map((d) => ({ label: d.title, to: `/diagnosis/${d.id}` }));
+const childrenOf = (item) => (item.children === 'diagnosis' ? DIAGNOSIS_LINKS : item.children);
 
 /** True when the current path belongs to this nav item (or one of its children). */
 function useIsActive() {
@@ -18,7 +19,8 @@ function useIsActive() {
   return (item) => {
     if (item.to === '/') return pathname === '/';
     const kids = childrenOf(item) ?? [];
-    return pathname.startsWith(item.to) || kids.some((c) => pathname.startsWith(c.to));
+    const owns = item.children === 'diagnosis' && pathname.startsWith('/treatments/');
+    return owns || pathname.startsWith(item.to) || kids.some((c) => pathname.startsWith(c.to));
   };
 }
 
@@ -140,6 +142,9 @@ function MobileMenu({ onClose, isActive }) {
           <Button href={SITE.phoneHref} variant="outline" arrow={false} className="w-full">
             <PhoneIcon className="h-4 w-4" /> {SITE.phone}
           </Button>
+          <div className="flex justify-center pt-1">
+            <SocialLinks size="lg" />
+          </div>
         </div>
       </motion.nav>
     </motion.div>
@@ -169,19 +174,18 @@ export default function Header() {
 
   return (
     <header className={`sticky top-0 z-40 bg-white/95 backdrop-blur transition-shadow duration-300 ${scrolled ? 'shadow-lg shadow-primary-900/5' : ''}`}>
-      <a
-        href={whatsappLink()}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block bg-primary-700 text-white transition-colors hover:bg-primary-800"
-      >
-        <span className="container-x flex h-9 items-center justify-center gap-2 text-xs font-medium sm:justify-end sm:text-[13px]">
-          <WhatsAppIcon className="h-4 w-4 flex-none text-[#25D366]" />
-          <span className="font-semibold uppercase tracking-wider text-accent-300">Book Appointment</span>
-          <span aria-hidden="true" className="text-white/40">|</span>
-          <span className="whitespace-nowrap">Assistant: <strong className="font-semibold">{SITE.phone}</strong></span>
-        </span>
-      </a>
+      <div className="bg-primary-700 text-white">
+        <div className="container-x flex h-9 items-center justify-center gap-2.5 text-[11px] font-medium min-[400px]:text-xs sm:justify-end sm:text-[13px]">
+          <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="flex min-w-0 items-center gap-2 hover:text-accent-200">
+            <WhatsAppIcon className="h-4 w-4 flex-none text-[#25D366]" />
+            <span className="whitespace-nowrap font-semibold uppercase tracking-normal text-accent-300 min-[400px]:tracking-wider">Book Appointment</span>
+            <span aria-hidden="true" className="text-white/40">|</span>
+            <span className="whitespace-nowrap"><span className="hidden min-[400px]:inline">Assistant: </span><strong className="font-semibold">{SITE.phone}</strong></span>
+          </a>
+          <span aria-hidden="true" className="h-4 w-px bg-white/25" />
+          <SocialLinks size="sm" />
+        </div>
+      </div>
       <div className="container-x flex h-20 items-center justify-between gap-2">
         <Logo />
 

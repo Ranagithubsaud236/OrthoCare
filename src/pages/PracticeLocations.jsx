@@ -44,8 +44,8 @@ export default function PracticeLocations() {
                     <p className="flex items-center gap-1.5 text-sm text-ink"><MapPinIcon className="h-4 w-4 text-primary-500" /> {loc.city}, {loc.region}</p>
                     <p className="mt-2 text-xs font-semibold uppercase tracking-wider text-primary-600 underline underline-offset-4">Clinic times</p>
                     {loc.schedule.map((s) => (
-                      <p key={s.days} className="flex items-center gap-1.5 text-sm">
-                        <ClockIcon className="h-4 w-4 text-accent-500" /> {s.days} · {s.time}
+                      <p key={s.days} className="text-sm">
+                        <ClockIcon className="mr-1.5 inline h-4 w-4 -translate-y-px text-accent-500" />{s.days} · {s.time}
                       </p>
                     ))}
                   </header>

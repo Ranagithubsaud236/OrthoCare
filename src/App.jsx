@@ -1,11 +1,12 @@
 import { lazy } from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import Home from './pages/Home';
 
 // Route-level code splitting: every page except Home loads on demand.
 const About = lazy(() => import('./pages/About'));
 const Treatments = lazy(() => import('./pages/Treatments'));
+const DiagnosisDetail = lazy(() => import('./pages/DiagnosisDetail'));
 const PracticeLocations = lazy(() => import('./pages/PracticeLocations'));
 const Insurance = lazy(() => import('./pages/Insurance'));
 const Gallery = lazy(() => import('./pages/Gallery'));
@@ -20,12 +21,8 @@ const TREATMENT_PAGES = {
   'total-knee-replacement': lazy(() => import('./pages/treatments/TotalKneeReplacement')),
   'partial-knee-replacement': lazy(() => import('./pages/treatments/PartialKneeReplacement')),
   'arthrosamid-injection': lazy(() => import('./pages/treatments/ArthrosamidInjection')),
-  'robotic-total-hip-replacement': lazy(() => import('./pages/treatments/RoboticTotalHipReplacement')),
   'robotic-total-knee-replacement': lazy(() => import('./pages/treatments/RoboticTotalKneeReplacement')),
-  'robotic-partial-knee-replacement': lazy(() => import('./pages/treatments/RoboticPartialKneeReplacement')),
   'knee-arthroscopy': lazy(() => import('./pages/treatments/KneeArthroscopy')),
-  'revision-hip-replacement': lazy(() => import('./pages/treatments/RevisionHipReplacement')),
-  'revision-knee-replacement': lazy(() => import('./pages/treatments/RevisionKneeReplacement')),
   'non-surgical-treatment': lazy(() => import('./pages/treatments/NonSurgicalTreatment')),
 };
 
@@ -35,7 +32,9 @@ const router = createBrowserRouter([
     children: [
       { path: '/', element: <Home /> },
       { path: '/about', element: <About /> },
-      { path: '/treatments', element: <Treatments /> },
+      { path: '/diagnosis', element: <Treatments /> },
+      { path: '/diagnosis/:id', element: <DiagnosisDetail /> },
+      { path: '/treatments', element: <Navigate to="/diagnosis" replace /> },
       ...Object.entries(TREATMENT_PAGES).map(([slug, Page]) => ({ path: `/treatments/${slug}`, element: <Page /> })),
       { path: '/practice-locations', element: <PracticeLocations /> },
       { path: '/insurance', element: <Insurance /> },

@@ -38,7 +38,7 @@ export default function Home() {
       <HeroSlider />
       <AboutPreview />
       <TreatmentsGrid
-        intro="From joint-preserving injections and keyhole surgery to robotic-assisted and complex revision joint replacement – care planned around your goals."
+        intro="From medicines and joint injections to keyhole surgery, joint replacement, fracture care, children’s orthopaedics and tumour surgery – care planned around your goals."
       />
       <GoogleReviews />
       <GalleryPreview />

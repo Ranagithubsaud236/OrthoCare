@@ -6,11 +6,24 @@ import Footer from './Footer';
 import { WhatsAppIcon } from '../common/Icons';
 import { whatsappLink } from '../../data/site';
 
+/** Scrolls to the top on navigation, or to the #section in the URL once the (lazy) page has rendered it. */
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' });
-  }, [pathname]);
+    if (!hash) {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+      return undefined;
+    }
+    let tries = 0;
+    const id = setInterval(() => {
+      const el = document.getElementById(decodeURIComponent(hash.slice(1)));
+      if (el || ++tries > 40) {
+        clearInterval(id);
+        el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 50);
+    return () => clearInterval(id);
+  }, [pathname, hash]);
   return null;
 }
 
@@ -49,10 +62,10 @@ export default function Layout() {
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ delay: 1.2, type: 'spring', stiffness: 260, damping: 18 }}
-        className="fixed bottom-5 right-5 z-40 grid h-14 w-14 place-items-center rounded-full bg-[#25D366] text-white shadow-xl shadow-black/20 transition-transform hover:scale-110"
+        className="fixed bottom-4 right-4 z-40 grid h-12 w-12 place-items-center sm:bottom-5 sm:right-5 sm:h-14 sm:w-14 rounded-full bg-[#25D366] text-white shadow-xl shadow-black/20 transition-transform hover:scale-110"
       >
         <span className="absolute inset-0 animate-ping rounded-full bg-[#25D366] opacity-30" />
-        <WhatsAppIcon className="relative h-7 w-7" />
+        <WhatsAppIcon className="relative h-6 w-6 sm:h-7 sm:w-7" />
       </motion.a>
     </>
   );
