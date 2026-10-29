@@ -23,6 +23,8 @@ function localApi() {
 
 export default defineConfig({
   plugins: [react(), tailwindcss(), localApi()],
+  // Don't watch build output, raw client media or upload zips (rewriting the zip crashed the dev server).
+  server: { watch: { ignored: ['**/dist/**', '**/pic/**', '**/*.zip'] } },
   build: {
     rollupOptions: {
       output: {

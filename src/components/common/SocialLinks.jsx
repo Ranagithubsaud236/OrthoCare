@@ -1,4 +1,4 @@
-import { FacebookIcon, InstagramIcon } from './Icons';
+import { FacebookIcon, InstagramIcon, TikTokIcon, YouTubeIcon } from './Icons';
 import { SITE, DOCTOR, SOCIAL } from '../../data/site';
 
 // Brand-coloured icon on a light circle; hovering or focusing fills the circle with the brand colour.
@@ -10,6 +10,14 @@ const BRANDS = {
   instagram: {
     Icon: InstagramIcon,
     cls: 'text-[#E1306C] hover:bg-gradient-to-tr hover:from-[#F58529] hover:via-[#DD2A7B] hover:to-[#8134AF] focus-visible:bg-gradient-to-tr focus-visible:from-[#F58529] focus-visible:via-[#DD2A7B] focus-visible:to-[#8134AF]',
+  },
+  tiktok: {
+    Icon: TikTokIcon,
+    cls: 'text-[#111] hover:bg-[#111] focus-visible:bg-[#111]',
+  },
+  youtube: {
+    Icon: YouTubeIcon,
+    cls: 'text-[#FF0000] hover:bg-[#FF0000] focus-visible:bg-[#FF0000]',
   },
 };
 

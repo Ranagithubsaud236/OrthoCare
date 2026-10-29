@@ -1,6 +1,7 @@
 // "Diagnosis" menu and pages, structured from Dr. Malik's own treatment notes.
-// The menu lists only the diagnoses; each diagnosis page shows its treatment options, and `to` links an
-// option to its detailed treatment page. `heading` is the page heading as [plain, highlighted].
+// The menu lists the diagnoses with a flyout of their treatment options (grouped by `group`, e.g. Surgical);
+// `to` links an option to its detailed treatment page, otherwise to its card on the diagnosis page.
+// `heading` is the diagnosis page heading as [plain, highlighted].
 export const DIAGNOSES = [
   {
     id: 'osteoarthritis-knee',
@@ -11,12 +12,12 @@ export const DIAGNOSES = [
     intro:
       'Knee osteoarthritis is treated in stages. Dr. Malik starts with the least invasive option likely to work and recommends surgery only when it offers you a clear benefit.',
     options: [
-      { id: 'conservative', label: 'Conservative Treatment', to: '/treatments/non-surgical-treatment', text: 'Medicines, physiotherapy, weight management and activity advice to control pain and keep the knee moving.' },
-      { id: 'injections', label: 'Intra-Articular Injections', to: '/diagnosis/intra-articular-injections', text: 'Injections directly into the knee joint – steroid, gel or Arthrosamid® – to reduce pain and inflammation.' },
-      { id: 'arthroscopy', label: 'Keyhole Surgery – Arthroscopy', to: '/treatments/knee-arthroscopy', text: 'Minimally invasive surgery through small incisions to treat meniscus, cartilage and ligament problems.' },
-      { id: 'uka', label: 'Half Knee Replacement (UKA)', to: '/treatments/partial-knee-replacement', text: 'Unicompartmental knee arthroplasty: only the worn part of the knee is replaced, keeping healthy bone and ligaments.' },
-      { id: 'tkr-robotic', label: 'Total Knee Replacement – Robotic', to: '/treatments/robotic-total-knee-replacement', text: 'Robotic-assisted total knee replacement, planned in 3D for precise implant positioning.' },
-      { id: 'tkr-conventional', label: 'Total Knee Replacement – Conventional', to: '/treatments/total-knee-replacement', text: 'Conventional total knee replacement, resurfacing the damaged joint with durable implants.' },
+      { id: 'conservative', group: 'Non-Surgical', label: 'Conservative Treatment', to: '/treatments/non-surgical-treatment', text: 'Medicines, physiotherapy, weight management and activity advice to control pain and keep the knee moving.' },
+      { id: 'injections', group: 'Non-Surgical', label: 'Intra-Articular Injections', to: '/diagnosis/intra-articular-injections', text: 'Injections directly into the knee joint – steroid, gel or Arthrosamid® – to reduce pain and inflammation.' },
+      { id: 'arthroscopy', group: 'Surgical', label: 'Keyhole Surgery – Arthroscopy', to: '/treatments/knee-arthroscopy', text: 'Minimally invasive surgery through small incisions to treat meniscus, cartilage and ligament problems.' },
+      { id: 'uka', group: 'Surgical', label: 'Half Knee Replacement (UKA)', to: '/treatments/partial-knee-replacement', text: 'Unicompartmental knee arthroplasty: only the worn part of the knee is replaced, keeping healthy bone and ligaments.' },
+      { id: 'tkr-robotic', group: 'Surgical', label: 'Total Knee Replacement – Robotic', to: '/treatments/robotic-total-knee-replacement', text: 'Robotic-assisted total knee replacement, planned in 3D for precise implant positioning.' },
+      { id: 'tkr-conventional', group: 'Surgical', label: 'Total Knee Replacement – Conventional', to: '/treatments/total-knee-replacement', text: 'Conventional total knee replacement, resurfacing the damaged joint with durable implants.' },
     ],
   },
   {
@@ -28,11 +29,11 @@ export const DIAGNOSES = [
     intro:
       'Hip arthritis care is matched to how advanced the joint damage is, your age and your activity level – always starting with the simplest effective option.',
     options: [
-      { id: 'conservative', label: 'Conservative with Medications', to: '/treatments/non-surgical-treatment', text: 'Pain-relieving and anti-inflammatory medicines with physiotherapy and lifestyle advice.' },
-      { id: 'injections', label: 'Intra-Articular Injections', to: '/diagnosis/intra-articular-injections', text: 'Injections into the hip joint to settle pain and inflammation.' },
-      { id: 'arthroscopy', label: 'Arthroscopic Surgery', text: 'Keyhole surgery of the hip joint through small incisions, for selected problems inside the joint.' },
-      { id: 'hemiarthroplasty', label: 'Hemiarthroplasty', text: 'Partial hip replacement in which only the ball of the hip joint is replaced.' },
-      { id: 'thr', label: 'Total Hip Replacement – Cemented & Non-Cemented', to: '/treatments/total-hip-replacement', text: 'Both the ball and socket are replaced. Implants are fixed either with bone cement (cemented) or by bone growing onto the implant (non-cemented); the choice depends on your bone quality and age.' },
+      { id: 'conservative', group: 'Non-Surgical', label: 'Conservative with Medications', to: '/treatments/non-surgical-treatment', text: 'Pain-relieving and anti-inflammatory medicines with physiotherapy and lifestyle advice.' },
+      { id: 'injections', group: 'Non-Surgical', label: 'Intra-Articular Injections', to: '/diagnosis/intra-articular-injections', text: 'Injections into the hip joint to settle pain and inflammation.' },
+      { id: 'arthroscopy', group: 'Surgical', label: 'Arthroscopic Surgery', text: 'Keyhole surgery of the hip joint through small incisions, for selected problems inside the joint.' },
+      { id: 'hemiarthroplasty', group: 'Surgical', label: 'Hemiarthroplasty', text: 'Partial hip replacement in which only the ball of the hip joint is replaced.' },
+      { id: 'thr', group: 'Surgical', label: 'Total Hip Replacement – Cemented & Non-Cemented', to: '/treatments/total-hip-replacement', text: 'Both the ball and socket are replaced. Implants are fixed either with bone cement (cemented) or by bone growing onto the implant (non-cemented); the choice depends on your bone quality and age.' },
     ],
   },
   {
@@ -69,10 +70,10 @@ export const DIAGNOSES = [
     summary: 'Care for children’s bone and joint conditions, including DDH and club foot.',
     intro: 'Children’s bone and joint conditions need treatment planned around growth. Dr. Malik treats developmental dysplasia of the hip (DDH) and club foot.',
     options: [
-      { id: 'ddh-unilateral', label: 'DDH – Unilateral', text: 'Developmental dysplasia affecting one hip: treated conservatively without surgery, or with surgery when needed.' },
-      { id: 'ddh-bilateral', label: 'DDH – Bilateral', text: 'Developmental dysplasia affecting both hips: treated conservatively, or with surgery when needed.' },
-      { id: 'club-foot-plaster', label: 'Club Foot – Plaster Correction', text: 'Gradual correction of the foot position with a series of plaster casts.' },
-      { id: 'club-foot-surgery', label: 'Club Foot – Surgery', text: 'Surgical correction when plaster treatment alone is not enough.' },
+      { id: 'ddh-unilateral', group: 'DDH', label: 'DDH – Unilateral', text: 'Developmental dysplasia affecting one hip: treated conservatively without surgery, or with surgery when needed.' },
+      { id: 'ddh-bilateral', group: 'DDH', label: 'DDH – Bilateral', text: 'Developmental dysplasia affecting both hips: treated conservatively, or with surgery when needed.' },
+      { id: 'club-foot-plaster', group: 'Club Foot', label: 'Club Foot – Plaster Correction', text: 'Gradual correction of the foot position with a series of plaster casts.' },
+      { id: 'club-foot-surgery', group: 'Club Foot', label: 'Club Foot – Surgery', text: 'Surgical correction when plaster treatment alone is not enough.' },
     ],
   },
   {
@@ -90,3 +91,14 @@ export const DIAGNOSES = [
 
 export const getDiagnosis = (id) => DIAGNOSES.find((d) => d.id === id);
 
+/** Link for a diagnosis option: its treatment page if it has one, otherwise its card on the diagnosis page. */
+export const optionHref = (diagnosis, option) => option.to ?? `/diagnosis/${diagnosis.id}#${option.id}`;
+
+/** Options grouped for the menu flyout: [{ name, options }], a single unnamed group when none are set. */
+export const optionGroups = (diagnosis) =>
+  diagnosis.options.reduce((groups, o) => {
+    const name = o.group ?? '';
+    const g = groups.find((x) => x.name === name) ?? groups[groups.push({ name, options: [] }) - 1];
+    g.options.push(o);
+    return groups;
+  }, []);

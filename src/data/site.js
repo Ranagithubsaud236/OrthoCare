@@ -20,6 +20,8 @@ export const SOCIAL = [
     href: 'https://www.facebook.com/p/%F0%9D%90%83%F0%9D%90%AB-%F0%9D%90%8A%F0%9D%90%A1%F0%9D%90%9A%F0%9D%90%A5%F0%9D%90%A2%F0%9D%90%9D-%F0%9D%90%91%F0%9D%90%9E%F0%9D%90%A1%F0%9D%90%A6%F0%9D%90%9A%F0%9D%90%A7-%F0%9D%90%8C%F0%9D%90%9A%F0%9D%90%A5%F0%9D%90%A2%F0%9D%90%A4-61581476383142/',
   },
   { id: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/dr.khalid_rehman_official/' },
+  { id: 'tiktok', label: 'TikTok', href: 'https://www.tiktok.com/@drkhalidrehmanofficial' },
+  { id: 'youtube', label: 'YouTube', href: 'https://www.youtube.com/@DrKhalidRehmanOfficial' },
 ];
 
 export const whatsappLink = (text = 'Assalam o Alaikum, I would like to book an appointment with Dr. Khalid Rehman Malik.') =>
@@ -120,6 +122,7 @@ export const NAV = [
   },
   { label: 'Diagnosis', to: '/diagnosis', children: 'diagnosis' },
   { label: 'Gallery', to: '/gallery' },
+  { label: 'Reviews', to: '/reviews' },
   { label: 'Insurance', to: '/insurance' },
   { label: 'Blog', to: '/blog' },
 ];

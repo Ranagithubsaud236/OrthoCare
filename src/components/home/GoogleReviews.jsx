@@ -67,7 +67,7 @@ function ReviewCard({ review }) {
  * Without an API key it shows genuine reviews copied from the Google profile (data/reviews.js),
  * labelled with the date they were taken.
  */
-export default function GoogleReviews() {
+export default function GoogleReviews({ showVideoLink = true }) {
   const [state, setState] = useState({ status: 'loading' });
 
   useEffect(() => {
@@ -110,9 +110,12 @@ export default function GoogleReviews() {
         </Stagger>
 
         <div className="mt-10 text-center">
-          <Button href={profileUrl} target="_blank" rel="noopener noreferrer">
-            See all {summary.count} reviews on Google
-          </Button>
+          <div className="flex flex-wrap justify-center gap-3">
+            <Button href={profileUrl} target="_blank" rel="noopener noreferrer">
+              See all {summary.count} reviews on Google
+            </Button>
+            {showVideoLink && <Button to="/reviews" variant="outline">Watch Video Reviews</Button>}
+          </div>
           <p className="mt-3 text-[11px] text-body/70">
             {live ? 'Live from Google.' : `Genuine reviews from our Google profile, as of ${GOOGLE_SUMMARY.asOf}.`}
           </p>

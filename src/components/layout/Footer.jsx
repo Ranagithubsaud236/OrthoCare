@@ -12,6 +12,7 @@ const SITE_MAP = [
   { label: 'Practice Locations', to: '/practice-locations' },
   { label: 'Insurance Information', to: '/insurance' },
   { label: 'Gallery', to: '/gallery' },
+  { label: 'Patient Reviews', to: '/reviews' },
   { label: 'Blog', to: '/blog' },
   { label: 'Contact Us', to: '/contact' },
 ];

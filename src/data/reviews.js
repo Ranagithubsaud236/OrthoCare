@@ -53,3 +53,22 @@ export const GOOGLE_REVIEWS = [
     text: 'I recently consulted with Dr. Khalid Rehman Malik, and his experience and expertise are truly commendable. He is not only an expert Orthopedic Surgeon but his demeanor with patients is also very friendly. He thoroughly explained every stage …',
   },
 ];
+
+// Video reviews and channel feed on the Reviews page.
+export const VIDEO_REVIEWS = [
+  {
+    platform: 'tiktok',
+    title: 'Dr. Khalid Rehman on TikTok',
+    embed: 'https://www.tiktok.com/player/v1/7529982478249987349?description=1&music_info=0',
+    href: 'https://www.tiktok.com/@drkhalidrehmanofficial/video/7529982478249987349',
+  },
+  {
+    platform: 'youtube',
+    title: 'Another Success Story!',
+    embed: 'https://www.youtube-nocookie.com/embed/ikocCTJZwNc',
+    href: 'https://www.youtube.com/watch?v=ikocCTJZwNc',
+  },
+];
+
+// "UU" + channel id (without "UC") is the channel's uploads playlist, so new videos appear automatically.
+export const YOUTUBE_UPLOADS_EMBED = 'https://www.youtube-nocookie.com/embed/videoseries?list=UUQ37Dadjmgxik3xPAmhtywA';
