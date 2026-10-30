@@ -9,6 +9,7 @@ const Treatments = lazy(() => import('./pages/Treatments'));
 const DiagnosisDetail = lazy(() => import('./pages/DiagnosisDetail'));
 const PracticeLocations = lazy(() => import('./pages/PracticeLocations'));
 const Insurance = lazy(() => import('./pages/Insurance'));
+const PrivateSecretary = lazy(() => import('./pages/PrivateSecretary'));
 const Gallery = lazy(() => import('./pages/Gallery'));
 const Reviews = lazy(() => import('./pages/Reviews'));
 const Blog = lazy(() => import('./pages/Blog'));
@@ -33,6 +34,7 @@ const router = createBrowserRouter([
     children: [
       { path: '/', element: <Home /> },
       { path: '/about', element: <About /> },
+      { path: '/private-secretary', element: <PrivateSecretary /> },
       { path: '/diagnosis', element: <Treatments /> },
       { path: '/diagnosis/:id', element: <DiagnosisDetail /> },
       { path: '/treatments', element: <Navigate to="/diagnosis" replace /> },

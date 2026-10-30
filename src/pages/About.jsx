@@ -7,8 +7,8 @@ import SmartImage from '../components/common/SmartImage';
 import ContactSection from '../components/home/ContactSection';
 import TreatmentsGrid from '../components/home/TreatmentsGrid';
 import { FullBleedSplit, MediaSplit, InfoCards } from '../components/treatment/Blocks';
-import { AwardIcon, CheckIcon } from '../components/common/Icons';
-import { SITE, DOCTOR, QUALIFICATIONS, SPECIALISMS, SECRETARY } from '../data/site';
+import { AwardIcon } from '../components/common/Icons';
+import { SITE, DOCTOR, QUALIFICATIONS, SPECIALISMS } from '../data/site';
 
 // Clinical-environment photos. Replace with the doctor's own photos when available.
 const GALLERY = ['theatre', 'surgeonsOperating', 'ward', 'xrayReview', 'consultScreen', 'surgeonFocus', 'kneePhysio', 'reception'];
@@ -76,61 +76,6 @@ export default function About() {
                 ligament reconstruction or a robotic-assisted joint replacement, his focus is always the same – helping patients move
                 freely, without pain, and get back to the life they enjoy.
               </p>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <Divider />
-
-      {/* Private secretary */}
-      <section id="private-secretary" className="scroll-mt-28 overflow-hidden bg-cream py-16 sm:py-24">
-        <div className="container-x grid items-center gap-14 lg:grid-cols-[1.2fr_0.8fr] lg:gap-20">
-          <Reveal from="left" delay={0.1} className="order-2 lg:order-1">
-            <SectionTitle as="h2" align="left" size="lg" eyebrow="Meet the team">
-              {SECRETARY.name} – <Hl>{SECRETARY.role}</Hl>
-            </SectionTitle>
-            <p className="mt-4 text-sm font-semibold text-primary-600">
-              Working with {DOCTOR.name} since {SECRETARY.since} · {SECRETARY.experienceYears} years in orthopaedic patient care
-            </p>
-            <div className="prose-body mt-6">
-              <p>
-                <strong>{SECRETARY.name}</strong> has worked alongside {DOCTOR.name} since <strong>{SECRETARY.since}</strong>, guiding
-                patients through every stage of their care. Whether you have a question before your operation or need advice during your
-                recovery, she is the link between you and Dr. Malik – making sure your concerns reach him and his instructions reach you.
-              </p>
-              <p>
-                She brings <strong>{SECRETARY.experienceYears} years of experience</strong> as a front-desk professional and assistant,
-                most of it in orthopaedic departments. Her courteous communication and confident handling of every detail of her role
-                are a big part of why our patients feel looked after from their first call to their final follow-up.
-              </p>
-            </div>
-            <ul className="mt-6 grid gap-2 sm:grid-cols-2">
-              {[
-                'Appointment booking & clinic schedules',
-                'Pre-operative guidance & preparation',
-                'Post-operative queries & follow-ups',
-                'Liaison between patients & Dr. Malik',
-              ].map((t) => (
-                <li key={t} className="flex items-start gap-2 text-sm">
-                  <CheckIcon className="mt-0.5 h-4 w-4 flex-none text-accent-500" /> {t}
-                </li>
-              ))}
-            </ul>
-          </Reveal>
-          <Reveal from="right" className="relative order-1 mx-auto w-full max-w-sm lg:order-2">
-            <span aria-hidden="true" className="absolute -right-4 -top-4 h-full w-full rounded-xl bg-primary-100" />
-            <div className="relative overflow-hidden rounded-xl border border-ink/10 bg-white shadow-2xl">
-              <img
-                src={SECRETARY.photo}
-                alt={`${SECRETARY.name}, ${SECRETARY.role} to ${DOCTOR.name}`}
-                loading="lazy"
-                className="aspect-[4/5] w-full object-cover object-top"
-              />
-            </div>
-            <div className="absolute -bottom-5 left-6 right-6 rounded-lg bg-primary-600 px-5 py-3 text-center shadow-xl">
-              <p className="text-sm font-semibold text-white">{SECRETARY.name}</p>
-              <p className="text-[11px] text-primary-100">{SECRETARY.role}</p>
             </div>
           </Reveal>
         </div>

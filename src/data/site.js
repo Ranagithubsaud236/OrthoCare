@@ -126,7 +126,7 @@ export const NAV = [
     to: '/about',
     children: [
       { label: 'About Dr. Malik', to: '/about' },
-      { label: 'Private Secretary – Miss Shumaila', to: '/about#private-secretary' },
+      { label: 'Private Secretary – Miss Shumaila', to: '/private-secretary' },
       { label: 'Practice Locations', to: '/practice-locations' },
       { label: 'Contact Us', to: '/contact' },
     ],
