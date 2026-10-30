@@ -5,3 +5,6 @@ dist
 pic/
 .env*.local
 *.zip
+
+# Hostinger upload package
+*.zip
