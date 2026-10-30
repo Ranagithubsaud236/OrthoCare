@@ -109,6 +109,16 @@ export const INSURERS = [
   { name: 'Askari', full: 'Askari Insurance', color: '#00704a' },
 ];
 
+// Dr. Malik's private secretary / patient coordinator (About page section + About dropdown).
+export const SECRETARY = {
+  name: 'Miss Shumaila Jhon Khokhar',
+  shortName: 'Miss Shumaila',
+  role: 'Private Secretary & Patient Coordinator',
+  since: 2012,
+  experienceYears: 15,
+  photo: '/images/team/shumaila-jhon-khokhar.jpg',
+};
+
 export const NAV = [
   { label: 'Home', to: '/' },
   {
@@ -116,6 +126,7 @@ export const NAV = [
     to: '/about',
     children: [
       { label: 'About Dr. Malik', to: '/about' },
+      { label: 'Private Secretary – Miss Shumaila', to: '/about#private-secretary' },
       { label: 'Practice Locations', to: '/practice-locations' },
       { label: 'Contact Us', to: '/contact' },
     ],
